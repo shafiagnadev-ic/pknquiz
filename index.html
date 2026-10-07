@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PKNQuiz — Latihan 26 Soal Hak, Kewajiban &amp; Pancasila</title>
+<meta name="description" content="Latihan 26 soal PPKn: hak & kewajiban warga negara (George Jellinek, Curzon, UUD 1945), Komnas HAM, lembaga penegak hukum, dan Pancasila. Koreksi langsung + pembahasan.">
+<meta name="theme-color" content="#0a0a12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0a0a12; --coal:#101019; --slate:#161622;
+  --ink:#f2efe8; --ink2:#b3aea3; --ink3:#7c776d;
+  --gold:#c8a86a; --gold-lt:#e8d3a4; --gold-dk:#8a6f3f;
+  --green:#5fbf8a; --red:#e07171;
+  --line:rgba(200,168,106,.22); --line2:rgba(242,239,232,.08);
+  --glass:rgba(242,239,232,.045);
+  --r-lg:18px; --r-md:13px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--void);color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,sans-serif;font-weight:300;
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(50% 40% at 85% 4%, rgba(200,168,106,.10), transparent 70%),
+    radial-gradient(46% 38% at 2% 40%, rgba(122,112,178,.07), transparent 72%)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--gold);color:var(--void)}
+:focus-visible{outline:1px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{width:min(880px,calc(100% - 36px));margin-inline:auto;position:relative;z-index:1}
+
+.hdr{position:sticky;top:0;z-index:40;background:rgba(10,10,18,.8);
+  backdrop-filter:blur(16px);border-bottom:1px solid var(--line2)}
+.hdr__in{display:flex;align-items:center;gap:14px;padding:14px 0}
+.mark{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;
+  border:1px solid var(--line);color:var(--gold-lt);
+  font-family:"Fraunces",serif;font-size:15px;
+  background:linear-gradient(150deg,rgba(200,168,106,.16),transparent)}
+.hdr__word{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.24em;
+  text-transform:uppercase;line-height:1.5}
+.hdr__word em{display:block;font-style:normal;font-size:.56rem;color:var(--ink3)}
+
+.hero{padding:clamp(44px,7vw,84px) 0 clamp(24px,4vw,40px);text-align:center}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+h1{font-family:"Fraunces",serif;font-weight:300;line-height:1.02;letter-spacing:-.02em;
+  font-size:clamp(2.1rem,5.6vw,3.7rem);margin:0;font-variation-settings:"SOFT" 0,"WONK" 1}
+h1 em{font-style:italic;color:var(--gold-lt);font-variation-settings:"SOFT" 40,"WONK" 1}
+.lead{margin:20px auto 0;max-width:54ch;color:var(--ink2);font-size:clamp(.95rem,1.4vw,1.06rem)}
+.topik-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+.tc{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);
+  background:var(--glass);font-family:"IBM Plex Mono",monospace;font-size:.6rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);transition:.3s}
+.tc:hover{border-color:var(--gold);color:var(--gold-lt)}
+
+.quiz{padding:clamp(20px,3vw,34px) 0 clamp(60px,8vw,90px)}
+.card{border:1px solid var(--line2);border-radius:var(--r-lg);
+  background:linear-gradient(180deg,var(--slate),var(--coal));
+  box-shadow:0 40px 90px -50px rgba(0,0,0,.95);overflow:hidden}
+.card__bar{height:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt));
+  width:0%;transition:width .5s var(--ease)}
+.card__in{padding:clamp(20px,3.4vw,34px)}
+
+.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink3)}
+.meta .badge{padding:6px 12px;border-radius:999px;border:1px solid var(--line);
+  color:var(--gold-lt);background:rgba(200,168,106,.08)}
+.meta .score{color:var(--ink2)}
+
+.qtext{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.18rem,2.3vw,1.56rem);
+  line-height:1.38;margin:22px 0 4px;font-variation-settings:"SOFT" 0,"WONK" 1}
+.qsub{margin:0 0 22px;color:var(--ink3);font-size:.86rem}
+
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:14px;text-align:left;width:100%;
+  padding:14px 17px;border-radius:var(--r-md);border:1px solid var(--line2);
+  background:var(--glass);transition:border-color .3s,background-color .3s,transform .35s var(--ease)}
+.opt:hover:not(:disabled){border-color:var(--gold);transform:translateX(5px)}
+.opt .key{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:9px;
+  border:1px solid var(--line2);font-family:"IBM Plex Mono",monospace;font-size:.72rem;
+  color:var(--gold)}
+.opt .txt{font-size:.95rem;padding-top:3px}
+.opt:disabled{cursor:default;opacity:.72}
+.opt.is-right{border-color:var(--green);background:rgba(95,191,138,.10);opacity:1}
+.opt.is-right .key{border-color:var(--green);color:var(--green)}
+.opt.is-wrong{border-color:var(--red);background:rgba(224,113,113,.10);opacity:1}
+.opt.is-wrong .key{border-color:var(--red);color:var(--red)}
+
+.fb{display:none;margin-top:18px;padding:15px 17px;border-radius:var(--r-md);
+  font-size:.9rem;border:1px solid}
+.fb.is-right{display:block;border-color:rgba(95,191,138,.4);background:rgba(95,191,138,.07)}
+.fb.is-wrong{display:block;border-color:rgba(224,113,113,.4);background:rgba(224,113,113,.07)}
+.fb b{font-weight:600}
+.fb .pbh{color:var(--ink2);font-size:.86rem;line-height:1.62}
+
+.acts{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 26px;
+  border-radius:999px;border:1px solid var(--line);font-family:"IBM Plex Mono",monospace;
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;transition:.4s var(--ease)}
+.btn--gold{background:linear-gradient(135deg,var(--gold-lt),var(--gold) 50%,var(--gold-dk));
+  color:#171208;border-color:transparent;font-weight:500}
+.btn--gold:hover{filter:brightness(1.08)}
+.btn--line:hover{border-color:var(--gold);color:var(--gold-lt)}
+.btn:disabled{opacity:.4;cursor:default}
+
+.dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line2);transition:.3s}
+.dots i.is-done{background:var(--gold)}
+.dots i.is-now{background:var(--gold-lt);transform:scale(1.45);box-shadow:0 0 10px rgba(200,168,106,.6)}
+
+.hasil{display:none;text-align:center;padding:clamp(28px,5vw,52px) clamp(18px,4vw,40px)}
+.hasil.is-on{display:block;animation:pop .7s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+.hasil .angka{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(3.4rem,10vw,6rem);
+  line-height:1;color:var(--gold-lt);font-variant-numeric:tabular-nums;
+  font-variation-settings:"SOFT" 0,"WONK" 1}
+.hasil .predikat{font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold);margin:14px 0 8px}
+.hasil p{color:var(--ink2);max-width:46ch;margin:0 auto 26px}
+.ringkas{display:grid;gap:8px;text-align:left;margin:0 0 30px}
+.ringkas div{display:flex;justify-content:space-between;gap:12px;padding:11px 15px;
+  border:1px solid var(--line2);border-radius:11px;font-size:.86rem;background:var(--glass)}
+.ringkas b{font-weight:500}
+.ringkas .ok{color:var(--green)} .ringkas .no{color:var(--red)}
+
+footer{border-top:1px solid var(--line2);padding:26px 0 40px;text-align:center;
+  font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink3)}
+
+@media (max-width:560px){
+  .opt{padding:12px 13px;gap:10px}
+  .qtext{font-size:1.12rem}
+  .ringkas div{font-size:.78rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <span class="mark">PK</span>
+    <span class="hdr__word">PKNQuiz<em>13 topik · 26 soal · koreksi langsung</em></span>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">PPKn · Hak &amp; Kewajiban · Pancasila</p>
+    <h1>Latihan 13 topik, <em>koreksi otomatis.</em></h1>
+    <p class="lead">Dua puluh enam soal pilihan ganda dari 13 kisi materi: jenis hak &amp; kewajiban
+      (George Jellinek &amp; Curzon), hak-kewajiban dalam UUD 1945, Komnas HAM, lembaga penegak hukum,
+      sampai nilai dasar–instrumental–praksis Pancasila. Setiap jawaban langsung dikoreksi beserta pembahasannya.</p>
+    <div class="topik-chips" id="chips"></div>
+  </div>
+</section>
+
+<section class="quiz">
+  <div class="wrap">
+    <div class="card">
+      <div class="card__bar" id="bar"></div>
+      <div class="card__in" id="quizBox"></div>
+      <div class="hasil" id="hasilBox"></div>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">PKNQuiz · 26 soal · dibuat untuk latihan mandiri</div>
+</footer>
+
+<script>
+const SOAL = [
+  /* ===== 1. Jenis hak & kewajiban: George Jellinek & Curzon ===== */
+  { t:'Jenis Hak — Jellinek & Curzon',
+    q:'Menurut George Jellinek, hak asasi manusia terbagi menjadi dua jenis, yaitu …',
+    o:['hak politik dan hak ekonomi',
+       'hak kodrati dan hak memperoleh hasil karya/jasa',
+       'hak individu dan hak kolektif',
+       'hak alamiah dan hak legal'], a:1,
+    p:'George Jellinek membagi hak menjadi: (1) hak kodrati — hak yang melekat sejak lahir sebagai anugerah Tuhan, dan (2) hak memperoleh hasil karya/jasa — hak yang diperoleh dari usaha sendiri.' },
+  { t:'Jenis Hak — Jellinek & Curzon',
+    q:'Menurut L.B. Curzon, hak asasi dibagi menjadi hak alamiah (natural rights) dan …',
+    o:['hak kodrati (innate rights)',
+       'hak yang diakui dan diatur oleh hukum (legal/statutory rights)',
+       'hak sipil dan politik',
+       'hak memperoleh hasil karya'], a:1,
+    p:'Curzon membagi: hak alamiah (natural rights) yang melekat pada manusia, dan hak yang diatur oleh hukum (legal/statutory rights) yang diakui negara melalui peraturan perundang-undangan.' },
+
+  /* ===== 2. Hak & kewajiban menurut UUD 1945 ===== */
+  { t:'Hak & Kewajiban UUD 1945',
+    q:'Berikut ini yang merupakan pasangan hak DAN kewajiban warga negara yang diatur dalam UUD 1945 adalah …',
+    o:['hak berserikat — kewajiban membayar pajak (Pasal 27 ayat 2 & Pasal 23)',
+       'hak mendapat pendidikan — kewajiban ikut membela negara (Pasal 31 & Pasal 27 ayat 3)',
+       'hak bekerja — kewajiban menjaga lingkungan',
+       'hak hidup — kewajiban mengikuti pemilu'], a:1,
+    p:'Pasal 31 ayat (1): setiap warga negara berhak mendapat pendidikan. Pasal 27 ayat (3): setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara. Keduanya diatur eksplisit dalam UUD 1945.' },
+  { t:'Hak & Kewajiban UUD 1945',
+    q:'"Setiap warga negara memiliki kedudukan yang sama di dalam hukum dan pemerintahan." Pernyataan ini tercantum dalam …',
+    o:['Pasal 27 ayat (1) UUD 1945','Pasal 28D ayat (1) UUD 1945',
+       'Pasal 29 ayat (2) UUD 1945','Pasal 30 ayat (1) UUD 1945'], a:0,
+    p:'Pasal 27 ayat (1) UUD 1945 berbunyi: "Segala warga negara bersama-sama kedudukannya di dalam hukum dan pemerintahan." Ini dasar asas persamaan di depan hukum.' },
+
+  /* ===== 3. Hak & kewajiban bidang pendidikan ===== */
+  { t:'Hak-Kewajiban Pendidikan',
+    q:'Contoh pelaksanaan kewajiban warga negara di bidang pendidikan adalah …',
+    o:['memilih sekolah favorit','mengikuti pendidikan dasar wajib belajar',
+       'membayar SPP lebih awal','mengikuti ekstrakurikuler'], a:1,
+    p:'Kewajiban di bidang pendidikan: setiap warga negara wajib mengikuti pendidikan dasar dan pemerintah wajib membiayainya (Pasal 31 ayat (2)). Contohnya mengikuti wajib belajar 9/12 tahun.' },
+  { t:'Hak-Kewajiban Pendidikan',
+    q:'Siswa yang memanfaatkan fasilitas belajar dengan baik dan menghormati hak teman untuk belajar tanpa mengganggu, menunjukkan hubungan hak dan kewajiban yang …',
+    o:['berpusat pada guru','seimbang dan saling menghormati',
+       'berat sebelah pada hak','terpisah satu sama lain'], a:1,
+    p:'Hak belajar siswa sejalan dengan kewajiban menghormati hak siswa lain. Hak dan kewajiban yang dijalankan seimbang menciptakan suasana belajar yang tertib dan adil.' },
+
+  /* ===== 4. Hak & kewajiban bidang hukum ===== */
+  { t:'Hak-Kewajiban Hukum',
+    q:'Contoh hak warga negara di bidang hukum adalah …',
+    o:['menaati peraturan lalu lintas','mendapat perlindungan dan kepastian hukum yang sama',
+       'melaporkan kejahatan ke polisi','membayar denda pelanggaran'], a:1,
+    p:'Hak di bidang hukum: persamaan di depan hukum (Pasal 27 ayat (1)), hak atas pengakuan, jaminan, perlindungan, dan kepastian hukum yang adil (Pasal 28D ayat (1)).' },
+  { t:'Hak-Kewajiban Hukum',
+    q:'Menaati hukum dan peraturan perundang-undangan yang berlaku adalah wujud kewajiban warga negara yang terkait erat dengan …',
+    o:['hak berserikat','hak berkumpul','hak atas rasa aman dan ketertiban umum','hak beragama'], a:2,
+    p:'Kewajiban menaati hukum menjamin terpenuhinya hak seluruh warga atas rasa aman, ketertiban, dan kepastian hukum. Jika kewajiban ini diabaikan, hak orang lain ikut terlanggar.' },
+
+  /* ===== 5. Alasan hak & kewajiban harus seimbang ===== */
+  { t:'Keseimbangan Hak-Kewajiban',
+    q:'Apa yang paling mungkin terjadi jika warga negara menuntut haknya tanpa mau menjalankan kewajiban?',
+    o:['Pembangunan berjalan lebih cepat',
+       'Timbul ketimpangan, konflik, dan pelanggaran hak orang lain',
+       'Hukum menjadi lebih tegas',
+       'Tidak terjadi apa-apa karena hak bersifat pribadi'], a:1,
+    p:'Hak dan kewajiban bersifat saling memengaruhi. Menuntut hak tanpa menjalankan kewajiban menciptakan ketimpangan sosial, konflik antarwarga, dan pelanggaran hak pihak lain.' },
+  { t:'Keseimbangan Hak-Kewajiban',
+    q:'Permyataan yang benar tentang hubungan hak dan kewajiban adalah …',
+    o:['Kewajiban hanya bagi yang punya kedudukan tinggi',
+       'Hak lebih penting daripada kewajiban',
+       'Setiap hak seseorang menimbulkan kewajiban bagi pihak lain untuk menghormatinya',
+       'Kewajiban dapat ditolak jika tidak menguntungkan'], a:2,
+    p:'Hak satu pihak selalu diimbangi kewajiban pihak lain (dan sebaliknya). Contoh: hakmu atas rasa aman diwujudkan lewat kewajiban orang lain untuk tidak melakukan kejahatan — dan kewajibanmu menaati hukum.' },
+
+  /* ===== 6. Upaya menghormati hak & kewajiban ===== */
+  { t:'Upaya Menghormati Hak',
+    q:'Contoh upaya paling konkret menghormati hak orang lain dalam kehidupan sehari-hari adalah …',
+    o:['menghargai pendapat teman saat musyawarah dan tidak memaksakan kehendak',
+       'menuntut ganti rugi atas kerugian kecil',
+       'membiarkan tetangga berisik asalkan tidak bertengkar',
+       'membuat aturan sendiri di lingkungan rumah'], a:0,
+    p:'Menghormati hak orang lain dimulai dari hal sederhana: menghargai pendapat (kebebasan berekspresi), tidak memaksakan kehendak, antre, dan tidak mengganggu hak orang lain.' },
+  { t:'Upaya Menghormati Hak',
+    q:'Upaya warga negara menjalankan kewajiban secara mandiri (tanpa paksaan) akan tercipta jika …',
+    o:['ada pengawasan ketat setiap saat',
+       'terdapat kesadaran dan tanggung jawab yang tumbuh dari dalam diri',
+       'ada sanksi hukum yang berat',
+       'hak sudah terpenuhi semua'], a:1,
+    p:'Kewajiban yang dijalankan karena kesadaran (bukan karena takut sanksi) disebut penegakan norma secara preventif dari dalam diri. Ini bentuk paling matang dari penghormatan hak orang lain.' },
+
+  /* ===== 7. Peran & fungsi Komnas HAM ===== */
+  { t:'Peran Komnas HAM',
+    q:'Fungsi utama Komnas HAM menurut UU No. 39 Tahun 1999 adalah …',
+    o:['mengadili pelanggar HAM di pengadilan',
+       'pengkajian, penelitian, penyuluhan, pemantauan, dan mediasi HAM',
+       'membuat undang-undang tentang HAM',
+       'menangkap pelaku pelanggaran HAM'], a:1,
+    p:'Komnas HAM menjalankan 5 fungsi: pengkajian, penelitian, penyuluhan, pemantauan, dan mediasi. Ia tidak berwenang mengadili atau menangkap — pengadilan pelanggaran HAM berwenang yudisial.' },
+  { t:'Peran Komnas HAM',
+    q:'Kedudukan Komnas HAM sebagai lembaga yang berdiri sendiri dan bebas dari pengaruh pemerintah maupun kelompok mana pun disebut sifat …',
+    o:['mandiri (independen)','yudisial','eksekutif','represif'], a:0,
+    p:'Komnas HAM adalah lembaga negara yang bersifat mandiri (independen) — tidak termasuk eksekutif, legislatif, maupun yudisial — agar pemeriksaan pelanggaran HAM tidak bias, termasuk terhadap pemerintah.' },
+
+  /* ===== 8. Pasal 27 ayat (3) & Pasal 31 ayat (1) ===== */
+  { t:'Pasal 27 (3) & 31 (1)',
+    q:'Pasal 27 ayat (3) UUD 1945 mengatur bahwa setiap warga negara berhak dan wajib ikut serta dalam …',
+    o:['pemilihan umum','upaya pembelaan negara','pembangunan ekonomi','pendidikan wajib'], a:1,
+    p:'Pasal 27 ayat (3): "Setiap warga negara berhak dan wajib ikut serta dalam upaya pembelaan negara." Pembelaan negara tidak selalu militer — bisa juga belajar sungguh-sungguh, kerja keras, dan menjaga nama baik bangsa.' },
+  { t:'Pasal 27 (3) & 31 (1)',
+    q:'Dasar konstitusional yang menjamin bahwa "setiap warga negara berhak mendapat pendidikan" adalah …',
+    o:['Pasal 28C ayat (1)','Pasal 31 ayat (1)','Pasal 33 ayat (1)','Pasal 34 ayat (1)'], a:1,
+    p:'Pasal 31 ayat (1) UUD 1945: "Setiap warga negara berhak mendapat pendidikan." Ayat (2) menambahkan kewajiban mengikuti pendidikan dasar yang dibiayai pemerintah.' },
+
+  /* ===== 9. Tantangan pemenuhan hak & kewajiban ===== */
+  { t:'Tantangan Pemenuhan Hak',
+    q:'Berikut ini yang BUKAN tantangan dalam pemenuhan hak dan kewajiban warga negara di Indonesia adalah …',
+    o:['belum meratanya akses pendidikan dan pelayanan publik',
+       'rendahnya kesadaran hukum sebagian masyarakat',
+       'praktik korupsi yang menggerus dana publik',
+       'melimpahnya sumber daya manusia yang terdidik di semua daerah'], a:3,
+    p:'Tantangannya justru sebaliknya: kesenjangan akses layanan, rendahnya kesadaran hukum, korupsi, dan kemiskinan. Semakin merata pendidikan, semakin mudah hak dan kewajiban terpenuhi.' },
+  { t:'Tantangan Pemenuhan Hak',
+    q:'Salah satu cara mengatasi tantangan pemenuhan hak dan kewajiban adalah meningkatkan sosialisasi nilai-nilai kebangsaan dan pendidikan hak asasi manusia sejak dini. Tujuan utamanya adalah …',
+    o:['membuat warga takut pada hukum',
+       'menumbuhkan kesadaran agar hak dan kewajiban dijalankan tanpa paksaan',
+       'menambah jumlah aturan baru',
+       'menggurui masyarakat tentang HAM'], a:1,
+    p:'Edukasi HAM dan nilai kebangsaan menanamkan kesadaran (awareness), bukan ketakutan. Kesadaran yang tumbuh dari dalam membuat hak dihormati dan kewajiban dijalankan secara sukarela.' },
+
+  /* ===== 10. Lembaga penegak hukum, peradilan & HAM ===== */
+  { t:'Lembaga Penegak Hukum',
+    q:'Urutan lembaga yang menangani penegakan hukum pidana secara berjenjang adalah …',
+    o:['Kejaksaan — Kepolisian — Pengadilan',
+       'Kepolisian — Kejaksaan — Pengadilan',
+       'Pengadilan — Kejaksaan — Kepolisian',
+       'KPK — Polri — MA'], a:1,
+    p:'Alur penegakan hukum pidana: Polri menyidik, Kejaksaan menuntut di muka pengadilan, dan Pengadilan (hakim) mengadili. Ketiganya disebut aparat penegak hukum (APH).' },
+  { t:'Lembaga Penegak Hukum',
+    q:'Selain Komnas HAM, lembaga berikut yang juga berperan dalam penegakan HAM di Indonesia adalah …',
+    o:['KPK dan Pengadilan HAM','BPOM dan OJK','KPU dan Bawaslu','DPR dan MPR'], a:0,
+    p:'Penegakan HAM ditangani Komnas HAM (pengkajian–mediasi), Kejaksaan (penuntutan pelanggaran HAM berat), dan Pengadilan HAM (peradilan genosida dan crimes against humanity, dibentuk berdasar UU No. 26/2000).' },
+
+  /* ===== 11. Hak yang tidak dapat dikurangi (non-derogable) ===== */
+  { t:'Hak yang Dikecualikan',
+    q:'Hak-hak yang TIDAK boleh dikurangi dalam keadaan apa pun (non-derogable rights) diatur dalam …',
+    o:['Pasal 4 UU No. 39 Tahun 1999 tentang HAM',
+       'Pasal 27 ayat (1) UUD 1945',
+       'Pasal 31 ayat (1) UUD 1945',
+       'Pasal 33 UUD 1945'], a:0,
+    p:'Pasal 4 UU HAM No. 39/1999: hak hidup, hak untuk tidak disiksa, hak kemerdekaan pribadi, hak berpikir dan berkumpul, dan hak beragama tidak dapat dikurangi dalam keadaan apa pun.' },
+  { t:'Hak yang Dikecualikan',
+    q:'Berdasarkan UU HAM, dalam keadaan darurat sekalipun, negara tetap TIDAK boleh mengurangi hak seseorang untuk …',
+    o:['bereksperesi di media sosial','tetap hidup dan tidak disiksa',
+       'memilih pekerjaan','bepergian antarnegara'], a:1,
+    p:'Hak hidup dan hak untuk tidak disiksa adalah hak paling mendasar (non-derogable). Tidak ada keadaan — perang, darurat, apalagi rutinitas — yang membolehkan pengurangannya.' },
+
+  /* ===== 12. Nilai dasar, instrumental, praksis ===== */
+  { t:'Nilai Pancasila',
+    q:'Nilai instrumental Pancasila adalah …',
+    o:['nilai luhur yang bersumber dari penghayatan bangsa sendiri',
+       'nilai yang dituangkan dalam UUD 1945, undang-undang, dan kebijakan negara',
+       'wujud nyata perilaku dalam kehidupan sehari-hari',
+       'nilai yang diimpor dari negara lain'], a:1,
+    p:'Tiga tingkatan: nilai dasar (Pancasila itu sendiri — bersifat tetap), nilai instrumental (dituangkan dalam UUD 1945, UU, Tap MPR, peraturan — bisa berubah), dan nilai praksis (perilaku nyata warga negara).' },
+  { t:'Nilai Pancasila',
+    q:'Contoh paling tepat dari nilai praksis Pancasila adalah …',
+    o:['butir-butir sila Pancasila dalam Pembukaan UUD 1945',
+       'Undang-Undang Sistem Pendidikan Nasional',
+       'siswa bergotong royong membersihkan kelas dan membantu teman yang kesulitan belajar',
+       'Pasal 31 UUD 1945 tentang pendidikan'], a:2,
+    p:'Nilai praksis = perwujudan nyata dalam tindakan sehari-hari, misalnya gotong royong. Opsi lain adalah nilai dasar (butir sila) dan nilai instrumental (UU dan pasal UUD).' },
+
+  /* ===== 13. Mengapa Pancasila sebagai dasar negara ===== */
+  { t:'Mengapa Pancasila',
+    q:'Alasan utama Pancasila dipilih sebagai dasar negara Indonesia adalah …',
+    o:['diadopsi dari negara maju lain agar cepat berkembang',
+       'digali dari nilai-nilai luhur yang sudah hidup dalam budaya bangsa Indonesia sendiri',
+       'ditetapkan penuh oleh penguasa kolonial',
+       'paling mudah dihafal oleh seluruh rakyat'], a:1,
+    p:'Pancasila digali (bukan diciptakan) dari nilai-nilai luhur adat istiadat dan budaya bangsa, dirumuskan lewat sidang BPUPKI, lalu ditetapkan bersama UUD 1945 pada 18 Agustus 1945.' },
+  { t:'Mengapa Pancasila',
+    q:'Sikap yang mencerminkan pengamalan Pancasila sebagai dasar negara di era global adalah …',
+    o:['mengikuti tren asing tanpa seleksi',
+       'mengutamakan produk asing karena kualitasnya',
+       'tetap berakar pada nilai Pancasila sambil terbuka selektif terhadap budaya luar',
+       'menolak semua pengaruh luar secara total'], a:2,
+    p:'Pancasila menempatkan bangsa Indonesia sebagai pribadi yang mandiri namun terbuka: menerima budaya luar secara selektif sesuai nilai Pancasila, tanpa kehilangan jati diri bangsa.' }
+];
+
+(function(){
+  'use strict';
+  const $ = (s,r)=> (r||document).querySelector(s);
+  const KEY = ['A','B','C','D'];
+  let i = 0, jawab = Array(SOAL.length).fill(null);
+
+  const box = $('#quizBox'), hasil = $('#hasilBox'), bar = $('#bar'), dots = $('#dots');
+  dots.innerHTML = SOAL.map(()=> '<i></i>').join('');
+  const dotEls = [...dots.children];
+
+  const topik = [...new Set(SOAL.map(s=>s.t))];
+  $('#chips').innerHTML = topik.map(t=>{
+    const n = SOAL.filter(s=>s.t===t).length;
+    return '<button class="tc" data-t="'+t+'">'+t+' · '+n+'</button>';
+  }).join('');
+  $('#chips').addEventListener('click', ev=>{
+    const b = ev.target.closest('.tc'); if(!b) return;
+    const idx = SOAL.findIndex(s=>s.t===b.getAttribute('data-t'));
+    if(idx>-1){ i = idx; render(); window.scrollTo({top:$('.quiz').offsetTop-80, behavior:'smooth'}); }
+  });
+
+  function progress(){
+    bar.style.width = ((i)/SOAL.length*100)+'%';
+    dotEls.forEach((d,k)=>{
+      d.classList.toggle('is-done', jawab[k]!==null);
+      d.classList.toggle('is-now', k===i);
+    });
+  }
+
+  function render(){
+    progress();
+    const s = SOAL[i], pilih = jawab[i];
+    const sudah = pilih!==null;
+    box.innerHTML =
+      '<div class="meta"><span class="badge">'+s.t+'</span>'+
+      '<span class="score">Soal '+(i+1)+' / '+SOAL.length+'</span></div>'+
+      '<h2 class="qtext">'+s.q+'</h2>'+
+      '<p class="qsub">Pilih satu jawaban — koreksi muncul otomatis.</p>'+
+      '<div class="opts">'+s.o.map((o,k)=>{
+        let cls='opt';
+        if(sudah){
+          if(k===s.a) cls+=' is-right';
+          else if(k===pilih) cls+=' is-wrong';
+        }
+        return '<button class="'+cls+'" data-k="'+k+'" '+(sudah?'disabled':'')+'>'+
+          '<span class="key">'+KEY[k]+'</span><span class="txt">'+o+'</span></button>';
+      }).join('')+'</div>'+
+      '<div class="fb '+(sudah ? (pilih===s.a?'is-right':'is-wrong') : '')+'" id="fb"></div>'+
+      '<div class="acts">'+
+        '<button class="btn btn--line" id="prev" '+(i===0?'disabled':'')+'>&larr; Sebelumnya</button>'+
+        '<button class="btn btn--gold" id="next">'+
+          (i===SOAL.length-1?'Lihat Hasil':'Berikutnya')+' &rarr;</button>'+
+      '</div>';
+
+    const fb = $('#fb');
+    if(sudah){
+      const benar = pilih===s.a;
+      fb.innerHTML = '<b>'+(benar?'Benar!':'Kurang tepat — jawaban: '+KEY[s.a]+'. '+s.o[s.a])+'</b>'+
+        '<span class="pbh"><br>Pembahasan: '+s.p+'</span>';
+    }
+    $('#prev').addEventListener('click', ()=>{ if(i>0){ i--; render(); } });
+    $('#next').addEventListener('click', ()=>{
+      if(i===SOAL.length-1){ tampilHasil(); }
+      else { i++; render(); }
+    });
+    [...box.querySelectorAll('.opt')].forEach(b=>{
+      b.addEventListener('click', ()=>{
+        if(jawab[i]!==null) return;
+        jawab[i] = +b.getAttribute('data-k');
+        render();
+      });
+    });
+  }
+
+  function tampilHasil(){
+    const benar = jawab.filter((j,k)=> j===SOAL[k].a).length;
+    const nilai = Math.round(benar/SOAL.length*100);
+    const pred = nilai>=85?'Excellent':nilai>=70?'Good Job':nilai>=50?'Keep Learning':'Ulangi Materi';
+    box.style.display='none';
+    hasil.classList.add('is-on');
+    hasil.innerHTML =
+      '<div class="angka">'+nilai+'</div>'+
+      '<p class="predikat">'+pred+' — '+benar+' benar dari '+SOAL.length+' soal</p>'+
+      '<p>'+(nilai>=70?'Mantap! Pemahaman materimu sudah kuat. Periksa soal yang keliru di ringkasan di bawah.'
+        :'Tidak apa-apa — baca ringkasan di bawah, pelajari pembahasannya, lalu coba lagi dari awal.')+'</p>'+
+      '<div class="ringkas">'+SOAL.map((s,k)=>{
+        const ok = jawab[k]===s.a;
+        return '<div><b>'+(k+1)+'. '+s.t+'</b><span class="'+(ok?'ok':'no')+'">'+(ok?'Benar':(jawab[k]===null?'Belum dijawab':'Salah ('+KEY[jawab[k]]+' &rarr; '+KEY[s.a]+')'))+'</span></div>';
+      }).join('')+'</div>'+
+      '<button class="btn btn--gold" id="ulang">Ulangi dari Awal &rarr;</button>';
+    bar.style.width='100%';
+    $('#ulang').addEventListener('click', ()=>{
+      i=0; jawab=Array(SOAL.length).fill(null);
+      hasil.classList.remove('is-on'); box.style.display='';
+      render();
+    });
+  }
+
+  document.addEventListener('keydown', ev=>{
+    if(hasil.classList.contains('is-on')) return;
+    const k = ev.key.toUpperCase();
+    if(KEY.includes(k)){
+      const btn = box.querySelector('.opt[data-k="'+KEY.indexOf(k)+'"]');
+      if(btn && !btn.disabled) btn.click();
+    }
+    if(ev.key==='ArrowRight' && i<SOAL.length-1){ i++; render(); }
+    if(ev.key==='ArrowLeft' && i>0){ i--; render(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
